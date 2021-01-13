@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Box.css';
 
 // This component should display a div with a background color, width and height based on the props passed to it
 class Box extends Component {

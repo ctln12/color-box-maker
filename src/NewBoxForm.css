@@ -1,0 +1,34 @@
+.NewBoxForm {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 4px;
+  width: 320px;
+  margin: 0px auto;
+}
+
+@media (max-width: 576px) {
+  .NewBoxForm {
+    width: 390px;
+  }
+}
+
+.NewBoxForm h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.NewBoxForm div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.NewBoxForm button {
+  width: 100%;
+  padding: 8px;
+  font-weight: bold;
+  background-color: #131313;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #131313;
+}

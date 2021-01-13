@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Box from './Box';
 import NewBoxForm from "./NewBoxForm";
 import { v4 as uuidv4 } from 'uuid';
+import './BoxList.css';
 
 // Place your state that contains all of the boxes here.
 // This component should render all of the Box components along with the NewBoxForm component
@@ -39,7 +40,7 @@ class BoxList extends Component {
     return (
       <div className="BoxList">
         <NewBoxForm createBox={this.create} />
-        <div>{boxes}</div>
+        <div className="Boxes">{boxes}</div>
       </div>
     );
   }

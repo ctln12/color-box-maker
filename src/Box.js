@@ -12,7 +12,14 @@ class Box extends Component {
   }
   render() {
     return (
-      <div className="Box" style={{width: `${this.props.width}px`, height: `${this.props.height}px`, backgroundColor: `${this.props.backgroundColor}`}}>
+      <div
+        className="Box"
+        style={{
+          width: `${this.props.width}px`,
+          height: `${this.props.height}px`,
+          backgroundColor: `${this.props.backgroundColor}`
+        }}
+      >
         <button onClick={this.handleClick}>x</button>
       </div>
     );

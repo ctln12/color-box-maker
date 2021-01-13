@@ -11,11 +11,11 @@ class NewBoxForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(evt){
-    this.setState({ [evt.target.name]: evt.target.value })
+    this.setState({ [evt.target.name]: evt.target.value });
   }
   handleSubmit(evt){
     evt.preventDefault();
-    this.props.addBox(this.state);
+    this.props.createBox(this.state);
     this.setState({ width: "", height: "", backgroundColor: "" });
   }
   render() {
@@ -23,21 +23,39 @@ class NewBoxForm extends Component {
       <div className="NewBoxForm">
         <h2>Add a new color box</h2>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="width">Width (pixels)</label><br />
-          <input
-            id="width" name="width" type="text" placeholder="50"
-            value={this.state.width}
-            onChange={this.handleChange} /><br />
-          <label htmlFor="height">Height (pixels)</label><br />
-          <input
-            id="height" name="height" type="text" placeholder="60"
-            value={this.state.height}
-            onChange={this.handleChange} /><br />
-          <label htmlFor="backgroundColor">Background Color</label><br />
-          <input
-            id="backgroundColor" name="backgroundColor" type="text" placeholder="purple"
-            value={this.state.backgroundColor}
-            onChange={this.handleChange} /><br />
+          <div>
+            <label htmlFor="width">Width (pixels)</label>
+            <input
+              type="text"
+              name="width"
+              value={this.state.width}
+              onChange={this.handleChange}
+              placeholder="e.g. 50"
+              id="width"
+            />
+          </div>
+          <div>
+            <label htmlFor="height">Height (pixels)</label>
+            <input
+              type="text"
+              name="height"
+              value={this.state.height}
+              onChange={this.handleChange}
+              placeholder="e.g. 60"
+              id="height"
+            />
+          </div>
+          <div>
+            <label htmlFor="backgroundColor">Background Color</label>
+            <input
+              type="text"
+              name="backgroundColor"
+              value={this.state.backgroundColor}
+              onChange={this.handleChange}
+              placeholder="e.g. purple"
+              id="backgroundColor"
+            />
+          </div>
           <button>Add box</button>
         </form>
       </div>

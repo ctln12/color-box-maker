@@ -14,10 +14,10 @@ class BoxList extends Component {
       { width: "210", height: "220", backgroundColor: "violet", id: uuidv4() },
       { width: "215", height: "205", backgroundColor: "darkblue", id: uuidv4() }
     ] };
-    this.addBox = this.addBox.bind(this);
+    this.create = this.create.bind(this);
     this.deleteBox = this.deleteBox.bind(this);
   }
-  addBox(box){
+  create(box){
     let newBox = { ...box, id: uuidv4() };
     this.setState(state => ({
       boxes: [...state.boxes, newBox]
@@ -29,12 +29,20 @@ class BoxList extends Component {
     }));
   }
   render() {
+    const boxes = this.state.boxes.map(box => (
+      <Box
+        key={box.id}
+        width={box.width}
+        height={box.height}
+        backgroundColor={box.backgroundColor}
+        id={box.id}
+        deleteBox={this.deleteBox}
+      />
+    ));
     return (
       <div className="BoxList">
-        <NewBoxForm addBox={this.addBox} />
-        <div>
-          {this.state.boxes.map(box => <Box key={box.id} id={box.id} width={box.width} height={box.height} backgroundColor={box.backgroundColor} deleteBox={this.deleteBox} />)}
-        </div>
+        <NewBoxForm createBox={this.create} />
+        <div>{boxes}</div>
       </div>
     );
   }
